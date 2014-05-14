@@ -21,3 +21,8 @@ myButLast (_:xs) = myButLast xs
 -- 2
 -- elementAt "haskell" 5
 -- 'e'
+
+elementAt :: (Eq a, Num a) => [a1] -> a -> a1
+elementAt c 0      = error "Indexing is not 0 based"
+elementAt (x:_) 1  = x
+elementAt (_:xs) i = elementAt xs (i - 1)
