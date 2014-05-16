@@ -36,3 +36,13 @@ elementAt (_:xs) i = elementAt xs (i - 1)
 myLength :: Num a => [t] -> a
 myLength [] = 0
 myLength (x:xs) = 1 + myLength xs
+
+-- Problem 5
+-- Reverse A list
+-- myReverse "A man, a plan, a canal, panama!"
+-- "!amanap ,lanac a ,nalp a ,nam A"
+-- myReverse [1,2,3,4]
+-- [4,3,2,1]
+myReverse :: [a] -> [a]
+myReverse [] = []
+myReverse xs = foldl (\acc n -> n : acc) [] xs
