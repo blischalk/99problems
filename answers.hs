@@ -26,3 +26,13 @@ elementAt :: (Eq a, Num a) => [a1] -> a -> a1
 elementAt c 0      = error "Indexing is not 0 based"
 elementAt (x:_) 1  = x
 elementAt (_:xs) i = elementAt xs (i - 1)
+
+-- Problem 4
+-- Find the number of elements in a list
+-- myLength [123, 456, 789]
+-- 3
+-- myLength "Hello, world!"
+-- 13
+myLength :: Num a => [t] -> a
+myLength [] = 0
+myLength (x:xs) = 1 + myLength xs
