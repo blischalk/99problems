@@ -46,3 +46,13 @@ myLength (x:xs) = 1 + myLength xs
 myReverse :: [a] -> [a]
 myReverse [] = []
 myReverse xs = foldl (\acc n -> n : acc) [] xs
+
+-- Problem 6
+-- Find out whether a list is a palindrome.
+-- A palindrome can be read forward or backward; e.g. (x a m a x)
+-- isPalindrome [1,2,3]
+-- False
+-- isPalindrome "madamimadam"
+-- True
+isPalindrome [] = False
+isPalindrome xs = xs == reverse xs
